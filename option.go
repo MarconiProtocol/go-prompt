@@ -4,6 +4,13 @@ package prompt
 // prompt.New accepts any number of options (this is functional option pattern).
 type Option func(prompt *Prompt) error
 
+func OptionHiddenInput() Option {
+	return func(p *Prompt) error {
+		p.renderer.hiddenInput = true
+		return nil
+	}
+}
+
 // OptionParser to set a custom ConsoleParser object. An argument should implement ConsoleParser interface.
 func OptionParser(x ConsoleParser) Option {
 	return func(p *Prompt) error {
@@ -234,6 +241,14 @@ func OptionShowCompletionAtStart() Option {
 	}
 }
 
+// OptionSetEarlyExit to provide an early exit channel.
+func OptionSetEarlyExit(earlyExit <-chan struct{}) Option {
+	return func(p *Prompt) error {
+		p.earlyExit = earlyExit
+		return nil
+	}
+}
+
 // New returns a Prompt with powerful auto-completion.
 func New(executor Executor, completer Completer, opts ...Option) *Prompt {
 	defaultWriter := NewStdoutWriter()
@@ -276,3 +291,5 @@ func New(executor Executor, completer Completer, opts ...Option) *Prompt {
 	}
 	return pt
 }
+
+

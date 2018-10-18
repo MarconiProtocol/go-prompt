@@ -20,6 +20,7 @@ func (w *PosixWriter) Flush() error {
 	l := len(w.buffer)
 	offset := 0
 	retry := 0
+
 	for {
 		n, err := syscall.Write(w.fd, w.buffer[offset:])
 		if err != nil {
@@ -65,3 +66,4 @@ func NewStderrWriter() ConsoleWriter {
 		fd: syscall.Stderr,
 	}
 }
+

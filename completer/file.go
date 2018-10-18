@@ -8,7 +8,7 @@ import (
 	"path/filepath"
 	"runtime"
 
-	prompt "github.com/c-bata/go-prompt"
+	prompt "git.marconi.org/marconiprotocol/go-prompt"
 )
 
 var (

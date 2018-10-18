@@ -2,8 +2,9 @@ package prompt
 
 import (
 	"runtime"
+	"strings"
 
-	"github.com/c-bata/go-prompt/internal/debug"
+	"git.marconi.org/marconiprotocol/go-prompt/internal/debug"
 	runewidth "github.com/mattn/go-runewidth"
 )
 
@@ -17,6 +18,8 @@ type Render struct {
 	col                uint16
 
 	previousCursor int
+
+	hiddenInput	bool
 
 	// colors,
 	prefixTextColor              Color
@@ -180,6 +183,7 @@ func (r *Render) Render(buffer *Buffer, completion *CompletionManager) {
 	r.move(r.previousCursor, 0)
 
 	line := buffer.Text()
+
 	prefix := r.getCurrentPrefix()
 	cursor := runewidth.StringWidth(prefix) + runewidth.StringWidth(line)
 
@@ -195,6 +199,10 @@ func (r *Render) Render(buffer *Buffer, completion *CompletionManager) {
 	// Rendering
 	r.out.HideCursor()
 	defer r.out.ShowCursor()
+
+	if r.hiddenInput {
+		line = strings.Repeat("*", len(line))
+	}
 
 	r.renderPrefix()
 	r.out.SetColor(r.inputTextColor, r.inputBGColor, false)
@@ -229,10 +237,17 @@ func (r *Render) Render(buffer *Buffer, completion *CompletionManager) {
 func (r *Render) BreakLine(buffer *Buffer) {
 	// Erasing and Render
 	cursor := runewidth.StringWidth(buffer.Document().TextBeforeCursor()) + runewidth.StringWidth(r.getCurrentPrefix())
+
+	output := buffer.Document().Text
+	if r.hiddenInput {
+    output = strings.Repeat("*", len(buffer.Document().Text))
+  }
+  output = output + "\n"
+
 	r.clear(cursor)
 	r.renderPrefix()
 	r.out.SetColor(r.inputTextColor, r.inputBGColor, false)
-	r.out.WriteStr(buffer.Document().Text + "\n")
+	r.out.WriteStr(output)
 	r.out.SetColor(DefaultColor, DefaultColor, false)
 	debug.AssertNoError(r.out.Flush())
 

@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	prompt "github.com/c-bata/go-prompt"
+	prompt "git.marconi.org/marconiprotocol/go-prompt"
 )
 
 func completer(in prompt.Document) []prompt.Suggest {
