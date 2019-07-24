@@ -3,7 +3,7 @@ package prompt
 import (
 	"strings"
 
-	"git.marconi.org/marconiprotocol/go-prompt/internal/debug"
+	"github.com/MarconiProtocol/go-prompt/internal/debug"
 	runewidth "github.com/mattn/go-runewidth"
 )
 

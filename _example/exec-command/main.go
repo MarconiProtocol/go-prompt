@@ -4,7 +4,7 @@ import (
 	"os"
 	"os/exec"
 
-	prompt "git.marconi.org/marconiprotocol/go-prompt"
+	prompt "github.com/MarconiProtocol/go-prompt"
 )
 
 func executor(t string) {

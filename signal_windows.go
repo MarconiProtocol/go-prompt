@@ -7,7 +7,7 @@ import (
 	"os/signal"
 	"syscall"
 
-	"git.marconi.org/marconiprotocol/go-prompt/internal/debug"
+	"github.com/MarconiProtocol/go-prompt/internal/debug"
 )
 
 func (p *Prompt) handleSignals(exitCh chan int, winSizeCh chan *WinSize, stop chan struct{}) {

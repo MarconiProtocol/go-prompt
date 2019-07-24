@@ -4,8 +4,8 @@ import (
 	"strings"
 	"unicode/utf8"
 
-	"git.marconi.org/marconiprotocol/go-prompt/internal/bisect"
-	istrings "git.marconi.org/marconiprotocol/go-prompt/internal/strings"
+	"github.com/MarconiProtocol/go-prompt/internal/bisect"
+	istrings "github.com/MarconiProtocol/go-prompt/internal/strings"
 	runewidth "github.com/mattn/go-runewidth"
 )
 

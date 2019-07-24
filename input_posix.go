@@ -6,7 +6,7 @@ import (
 	"syscall"
 	"unsafe"
 
-	"git.marconi.org/marconiprotocol/go-prompt/internal/term"
+	"github.com/MarconiProtocol/go-prompt/internal/term"
 )
 
 const maxReadBytes = 1024

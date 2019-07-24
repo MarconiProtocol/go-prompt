@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	prompt "git.marconi.org/marconiprotocol/go-prompt"
+	prompt "github.com/MarconiProtocol/go-prompt"
 )
 
 func executor(in string) {

@@ -5,8 +5,8 @@ import (
 	"os"
 	"strings"
 
-	prompt "git.marconi.org/marconiprotocol/go-prompt"
-	"git.marconi.org/marconiprotocol/go-prompt/completer"
+	prompt "github.com/MarconiProtocol/go-prompt"
+	"github.com/MarconiProtocol/go-prompt/completer"
 )
 
 var filePathCompleter = completer.FilePathCompleter{

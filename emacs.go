@@ -1,6 +1,6 @@
 package prompt
 
-import "git.marconi.org/marconiprotocol/go-prompt/internal/debug"
+import "github.com/MarconiProtocol/go-prompt/internal/debug"
 
 /*
 

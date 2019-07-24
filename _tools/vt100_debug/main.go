@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"syscall"
 
-	prompt "git.marconi.org/marconiprotocol/go-prompt"
-	"git.marconi.org/marconiprotocol/go-prompt/internal/term"
+	prompt "github.com/MarconiProtocol/go-prompt"
+	"github.com/MarconiProtocol/go-prompt/internal/term"
 )
 
 func main() {

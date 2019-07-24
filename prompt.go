@@ -5,7 +5,7 @@ import (
 	"os"
 	"time"
 
-	"git.marconi.org/marconiprotocol/go-prompt/internal/debug"
+	"github.com/MarconiProtocol/go-prompt/internal/debug"
 )
 
 // Executor is called when user input something text.

@@ -3,7 +3,7 @@ package strings_test
 import (
 	"fmt"
 
-	"git.marconi.org/marconiprotocol/go-prompt/internal/strings"
+	"github.com/MarconiProtocol/go-prompt/internal/strings"
 )
 
 func ExampleIndexNotByte() {

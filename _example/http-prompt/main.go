@@ -10,7 +10,7 @@ import (
 	"path"
 	"strings"
 
-	prompt "git.marconi.org/marconiprotocol/go-prompt"
+	prompt "github.com/MarconiProtocol/go-prompt"
 )
 
 type RequestContext struct {
